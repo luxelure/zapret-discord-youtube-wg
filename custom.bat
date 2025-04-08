@@ -4,12 +4,11 @@ chcp 65001 > nul
 
 cd /d "%~dp0"
 call service_status.bat zapret
-
 echo:
 
 set BIN=%~dp0bin\
 
-start "zapret: custom706" /min "%BIN%winws.exe" --wf-tcp=80,443 --wf-udp=53,80,123,443,500-8886,49152-65535 ^
+start "zapret: custom" /min "%BIN%winws.exe" --wf-tcp=80,443 --wf-udp=53,80,123,443,500-8886,49152-65535 ^
 --filter-l7=wireguard --dpi-desync=fake --dpi-desync-repeats=12 --dpi-desync-fake-unknown-udp="%BIN%wireguard_initiation.bin" --new ^
 --filter-udp=50000-50099 --filter-l7=discord,stun --dpi-desync=fake --new ^
 --filter-tcp=80 --ipset="ipset-cdn.txt" --dpi-desync=fake,fakedsplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
@@ -23,4 +22,4 @@ start "zapret: custom706" /min "%BIN%winws.exe" --wf-tcp=80,443 --wf-udp=53,80,1
 --filter-tcp=443 --ipset="ipset-cdn.txt" --dpi-desync=fake,multidisorder --dpi-desync-split-pos=midsld --dpi-desync-repeats=6 --dpi-desync-fooling=badseq,md5sig --new ^
 --filter-tcp=443 --hostlist="list-custom.txt" --dpi-desync=fake,multidisorder --dpi-desync-split-pos=midsld --dpi-desync-repeats=11 --dpi-desync-fooling=badseq,md5sig --new ^
 --filter-tcp=443 --hostlist="list-discord.txt" --dpi-desync=fake,multidisorder --dpi-desync-split-pos=midsld --dpi-desync-repeats=6 --dpi-desync-fooling=badseq,md5sig --new ^
---filter-tcp=443 --hostlist="list-youtube.txt" --dpi-desync=fake,multidisorder --dpi-desync-split-pos=1,midsld --dpi-desync-repeats=11 --dpi-desync-fooling=md5sig --dpi-desync-fake-tls-mod=rnd,dupsid,sni=www.google.com
+--filter-tcp=443 --hostlist="list-youtube.txt" --dpi-desync=fake,multidisorder --dpi-desync-split-pos=1,midsld --dpi-desync-repeats=11 --dpi-desync-fooling=md5sig --dpi-desync-fake-tls="%BIN%tls_clienthello_www_google_com.bin" --dpi-desync-fake-tls-mod=rnd,dupsid
