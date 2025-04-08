@@ -16,3 +16,7 @@ Based on [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-you
 * `service_remove.bat` - to uninstall the service.
 * `service_status.bat` - to check the service status.
 * `wgonly.bat` - only for WireGuard on a 53-65535 port range (cannot be installed as a service).
+
+### Credits
+* [bol-van](https://github.com/bol-van), creator of [zapret](https://github.com/bol-van/zapret).
+* [Flowseal](https://github.com/Flowseal), creator of [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube).
