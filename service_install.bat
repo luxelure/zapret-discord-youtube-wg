@@ -25,7 +25,7 @@ echo Pick one of the options:
 set "count=0"
 for %%f in (*.bat) do (
     set "filename=%%~nxf"
-    if /i not "!filename:~0,7!"=="service" if /i not "!filename:~0,6!"=="wgonly" (
+    if /i not "!filename:~0,7!"=="service" if /i not "!filename:~0,6!"=="global" (
         set /a count+=1
         echo !count!. %%f
         set "file!count!=%%f"

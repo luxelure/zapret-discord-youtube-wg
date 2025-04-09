@@ -8,8 +8,8 @@ echo:
 
 set BIN=%~dp0bin\
 
-start "zapret: custom" /min "%BIN%winws.exe" --wf-tcp=80,443 --wf-udp=53,80,123,443,500-8886,49152-65535 ^
---filter-l7=wireguard --dpi-desync=fake --dpi-desync-repeats=12 --dpi-desync-fake-unknown-udp="%BIN%wireguard_initiation.bin" --new ^
+start "zapret: custom" /min "%BIN%winws.exe" --wf-tcp=80,443 --wf-udp=53-65535 ^
+--filter-udp=53-65535 --filter-l7=wireguard --dpi-desync=fake --dpi-desync-repeats=12 --dpi-desync-fake-unknown-udp="%BIN%wireguard_initiation.bin" --new ^
 --filter-udp=50000-50099 --filter-l7=discord,stun --dpi-desync=fake --new ^
 --filter-tcp=80 --ipset="ipset-cdn.txt" --dpi-desync=fake,fakedsplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
 --filter-tcp=80 --hostlist="list-custom.txt" --dpi-desync=fake,fakedsplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
