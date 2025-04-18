@@ -14,11 +14,8 @@ if "%1"=="admin" (
 
 :: Main
 cd /d "%~dp0"
-set BIN_PATH=%~dp0bin\
-
-:: Checking for updates
-:: call check_updates.bat soft
-:: echo:
+set "BIN_PATH=%~dp0bin\"
+set "LISTS_PATH=%~dp0lists\"
 
 :: Searching for .bat files in current folder, except files that start with "service"
 echo Pick one of the options:
@@ -44,7 +41,10 @@ if not defined selectedFile (
     goto :eof
 )
 
-:: Parsing args (mergeargs: 2=start param|1=params args|0=default)
+:: Args that should be followed by value
+set "args_with_value=sni"
+
+:: Parsing args (mergeargs: 2=start param|3=arg with value|1=params args|0=default)
 set "args="
 set "capture=0"
 set "mergeargs=0"
@@ -82,6 +82,8 @@ for /f "tokens=*" %%a in ('type "!selectedFile!"') do (
                         set "arg=\!QUOTE!@%~dp0!arg:~1!\!QUOTE!"
                     ) else if "!arg:~0,5!"=="%%BIN%%" (
                         set "arg=\!QUOTE!!BIN_PATH!!arg:~5!\!QUOTE!"
+                    ) else if "!arg:~0,7!"=="%%LISTS%%" (
+                        set "arg=\!QUOTE!!LISTS_PATH!!arg:~7!\!QUOTE!"
                     ) else (
                         set "arg=\!QUOTE!%~dp0!arg!\!QUOTE!"
                     )
@@ -89,6 +91,9 @@ for /f "tokens=*" %%a in ('type "!selectedFile!"') do (
                 
                 if !mergeargs!==1 (
                     set "temp_args=!temp_args!,!arg!"
+                ) else if !mergeargs!==3 (
+                    set "temp_args=!temp_args!=!arg!"
+                    set "mergeargs=1"
                 ) else (
                     set "temp_args=!temp_args! !arg!"
                 )
@@ -97,6 +102,12 @@ for /f "tokens=*" %%a in ('type "!selectedFile!"') do (
                     set "mergeargs=2"
                 ) else if !mergeargs!==2 (
                     set "mergeargs=1"
+                ) else if !mergeargs!==1 (
+                    for %%x in (!args_with_value!) do (
+                        if /i "%%x"=="!arg!" (
+                            set "mergeargs=3"
+                        )
+                    )
                 )
             )
         )
