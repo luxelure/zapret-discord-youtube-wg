@@ -9,4 +9,4 @@ echo:
 set "BIN=%~dp0bin\"
 
 start "zapret: wgonly" /min "%BIN%winws.exe" --wf-udp=53-65535 ^
---filter-udp=53-65535 --filter-l7=wireguard --dpi-desync=fake --dpi-desync-repeats=11 --dpi-desync-fake-unknown-udp="%BIN%wireguard_initiation.bin"
+--filter-udp=53-65535 --filter-l7=wireguard --dpi-desync=fake --dpi-desync-repeats=11

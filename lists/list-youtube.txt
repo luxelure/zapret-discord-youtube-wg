@@ -12,8 +12,4 @@ youtu.be
 yt-video-upload.l.google.com
 ytimg.com
 ytimg.l.google.com
-frankerfacez.com
-ffzap.com
-betterttv.net
-7tv.app
-7tv.io
+
