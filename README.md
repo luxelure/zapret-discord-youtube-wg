@@ -13,14 +13,7 @@ Based on [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-you
 * `general.bat` - for WireGuard, YouTube, and Discord (without Cloudflare).
 * `global.bat` - will do its best at bypassing the DPI on all sites, without having to rely on the `list-custom.txt` hostlist. Cannot be installed as a service due to potential breakages it can cause in some games.
 * `discord.bat` - for WireGuard & Discord only (without Cloudflare).
-* `zsttk-custom.bat` - transtelecom version of `custom.bat`.
-* `zsttk-custom-slice.bat` - transtelecom version of `custom.bat` sliced in multiple positions.
-* `zsttk-general-mid.bat` - transtelecom version of `general.bat`.
-* `zsttk-general-slice.bat` - transtelecom version of `general.bat` sliced in multiple positions.
-* `zsttk-global-slice` - transtelecom version of `global.bat` sliced in multiple positions.
-* `zsttk-discord-mid.bat` - transtelecom version of `discord.bat`.
-* `zsttk-discord-slice.bat` - transtelecom version of `discord.bat` sliced in multiple positions.
-* `zsttk-discord-split.bat` - transtelecom version of `discord.bat` split at position 1.
+* `zsttk-*.bat` - transtelecom versions of the above.
 * `wgonly.bat` - only for WireGuard on UDP 53-65535 port range.
 * `service_install.bat` - to install any of the above (except `global.bat` & `zsttk-global-slice`) as a Windows service.
 * `service_remove.bat` - to uninstall the service.
