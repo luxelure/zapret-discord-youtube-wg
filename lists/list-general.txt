@@ -23,7 +23,8 @@ discordpartygames.com
 discordsays.com
 discordsez.com
 stable.dl2.discordapp.net
-ggpht.com
+yt3.ggpht.com
+yt4.ggpht.com
 googlevideo.com
 jnn-pa.googleapis.com
 wide-youtube.l.google.com
@@ -37,8 +38,11 @@ youtu.be
 yt-video-upload.l.google.com
 ytimg.com
 ytimg.l.google.com
+yt3.googleusercontent.com
 frankerfacez.com
 ffzap.com
 betterttv.net
+betterttv.com
 7tv.app
 7tv.io
+7tv.gg

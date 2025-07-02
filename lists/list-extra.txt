@@ -48,9 +48,10 @@ lostfilm.top
 lostfilm.tv
 rutracker.org
 rutracker.cc
-cloudfront.net
 frankerfacez.com
 ffzap.com
 betterttv.net
+betterttv.com
 7tv.app
 7tv.io
+7tv.gg
