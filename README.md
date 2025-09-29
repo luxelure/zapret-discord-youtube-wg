@@ -7,8 +7,7 @@ Based on [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-you
 * `general.bat` - for WireGuard, YouTube, and Discord.
 * `extra.bat` - similar to general but with some miscellaneous sites added on top, inspect `list-extra.txt` to see them all.
 * `global.bat` - will do its best at bypassing the DPI on all sites, without having to rely on the `list-extra.txt` hostlist. Cannot be installed as a service due to potential breakages it can cause in some games.
-* `zsttk-*.bat` - transtelecom versions of the above.
-* `wgonly.bat` - only for WireGuard on UDP 53-65535 port range.
+* `wgonly.bat` - only for WireGuard.
 * `service_install.bat` - to install any of the above (except `global.bat` & `zsttk-global-*.bat`) as a Windows service.
 * `service_remove.bat` - to uninstall the service.
 * `service_status.bat` - to check the service status.
