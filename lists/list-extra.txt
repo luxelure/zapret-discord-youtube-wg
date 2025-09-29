@@ -1,4 +1,6 @@
+amnezia.org
 torproject.org
+ntc.party
 cloudflareclient.com
 proton.me
 protonvpn.com
@@ -29,7 +31,6 @@ anime777.online
 anime777.site
 3.animegood.icu
 animegood.mom
-ntc.party
 cdninstagram.com
 facebook.com
 facebook.net
@@ -55,3 +56,4 @@ betterttv.com
 7tv.app
 7tv.io
 7tv.gg
+speedtest.net
